@@ -1,0 +1,22 @@
+body {
+    background-color: mediumaquamarine;
+    text-align: center;
+}
+
+.section {
+    margin: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-container input[type="text"] {
+    margin-right: 10px;
+}
+
+footer {
+    margin-top: 20px;
+}
