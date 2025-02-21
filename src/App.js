@@ -6,6 +6,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Home from "./Home";
 import About from "./About";
+import ForgotPassword from "./ForgotPassword";
 import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -15,9 +16,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Login />} /> navigate 
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={ <Home /> } />
+        <Route path="/ForgotPassword" element={<ForgotPassword />} /> 
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>

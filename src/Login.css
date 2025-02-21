@@ -1,22 +1,80 @@
-h2{
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-size: 2rem;
+/* Login.module.css */
+.login-container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 280px; /* Reduced width for a more compact layout */
+  text-align: center;
+  margin-top: 150px;
+  margin-left: 600px;
+  
 }
 
-input{
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-button{
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label {
+  text-align: left;
+  color: red;
+  font-size: 18px; /* Reduced font size for a more compact layout */
+}
+
+.input {
+  border: 1px solid #e2e8f0;
+  padding: 8px; /* Reduced padding for a more compact layout */
+  border-radius: 5px;
+}
+
+.login-button, .forgot-button, .signup-button {
+  background-color: #4299e1;
+  color: white;
+  padding: 8px; /* Reduced padding for a more compact layout */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-button:hover, .forgot-button:hover, .signup-button:hover {
+  background-color: #3182ce;
+}
+
+.forgot-button {
+  background-color: #ecc94b;
+}
+
+.forgot-button:hover {
+  background-color: #d69e2e;
+}
+
+.signup-button {
+  background-color: #f56565;
+}
+
+.signup-button:hover {
+  background-color: #c53030;
+}
+
+.signup-link {
+  color: #4299e1;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
 }

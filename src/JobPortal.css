@@ -1,5 +1,9 @@
 body {
-    background-color: mediumaquamarine;
+    background-image: url('background.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    
+
     text-align: center;
 }
 
