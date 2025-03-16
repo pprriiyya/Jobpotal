@@ -1,12 +1,22 @@
-// App.js
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Login from "./Login";
 import Signup from "./Signup";
 import Home from "./Home";
 import About from "./About";
-import ForgotPassword from "./ForgotPassword";
+import ForgotPassword from "./ForgotPassword"; // Removed stray `zz`
+import JobSeekerLogin from "./.JobSeekerLogin";
+import JobSeekersSignUp from "./JobSeekersSignUp";
+import JobSeekerForgotPassword from "./JobSeekerForgotPassword";
+import EmployeeLogin from "./EmployeeLogin";
+import EmployerSignUp from "./EmployeeSignUp";
+import EmployeeForgotPassword from "./EmployeeForgotPassword";
+import JobApplicationForm from "./JobApplicationForm";
+import EmployeeAppForm from "./EmployeeAppForm";
+import ContactUs from "./ContactUs";
+
+
 import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -16,11 +26,23 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} /> navigate 
+        <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/home" element={ <Home /> } />
-        <Route path="/ForgotPassword" element={<ForgotPassword />} /> 
+        <Route path="/home" element={<Home />} />
+        <Route path="/ForgotPassword" element={<ForgotPassword />} />
         <Route path="/about" element={<About />} />
+        <Route path="/JobSeekerLogin" element={<JobSeekerLogin />} />
+        <Route path="/JobSeekersSignUp" element={<JobSeekersSignUp />} />
+        <Route path="/JobSeekerForgotPassword" element={<JobSeekerForgotPassword />} />
+        <Route path="/EmployeeLogin" element={<EmployeeLogin />} />
+        <Route path="/EmployerSignUp" element={<EmployerSignUp />} />
+        <Route path="/EmployeeForgotPassword" element={<EmployeeForgotPassword />} />
+        <Route path="/JobApplicationForm" element={<JobApplicationForm />} />
+        <Route path="/EmployeeAppForm" element={<EmployeeAppForm />} />
+        <Route path="/ContactUs" element={<ContactUs />} />
+      
+
+       
       </Routes>
     </Router>
   );

@@ -14,7 +14,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, email, password); 
       navigate("/login"); // Redirect to the login page after successful signup
     } catch (error) {
       setError(error.message);
