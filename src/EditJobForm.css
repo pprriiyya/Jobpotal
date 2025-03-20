@@ -1,0 +1,47 @@
+.edit-job-container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-job-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-job-form label {
+    font-weight: bold;
+    margin: 10px 0 5px;
+  }
+  
+  .edit-job-form input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .save-button, .cancel-button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .save-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .cancel-button {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .save-button:hover, .cancel-button:hover {
+    opacity: 0.8;
+  }  

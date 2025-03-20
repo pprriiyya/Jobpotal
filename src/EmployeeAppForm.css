@@ -1,11 +1,19 @@
 /* EmployeeAppForm.css */
 .form-container {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 100px auto;
     padding: 20px;
     background-color: powderblue;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+
+  }
+  .form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: left;
   }
   
   .form-title {

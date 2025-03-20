@@ -1,0 +1,61 @@
+.dashboard-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 10px;
+  background-color: cyan;
+  color: white;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.sidebar-button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.main-content {
+  padding: 20px;
+  flex: 1;
+}
+
+.profile-container {
+  margin-top: 20px;
+}
+
+.profile-details p {
+  font-size: 18px;
+}
+
+.edit-profile-form input {
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.save-button, .edit-button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.save-button:hover, .edit-button:hover {
+  background-color: #218838;
+}
+
+.edit-button {
+  margin-left: 10px;
+}

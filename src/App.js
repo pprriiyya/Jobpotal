@@ -15,7 +15,12 @@ import EmployeeForgotPassword from "./EmployeeForgotPassword";
 import JobApplicationForm from "./JobApplicationForm";
 import EmployeeAppForm from "./EmployeeAppForm";
 import ContactUs from "./ContactUs";
-
+import EditJobForm from "./EditJobForm";
+import JobListings from "./JobListings";
+import EmployerDashboard from "./EmployerDashboard";
+import EmployeeJobListing from "./EmployeeJobListing";
+import JobApplications from "./JobApplications";
+import Profile from "./Profile";
 
 import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -40,6 +45,12 @@ const App = () => {
         <Route path="/JobApplicationForm" element={<JobApplicationForm />} />
         <Route path="/EmployeeAppForm" element={<EmployeeAppForm />} />
         <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/JobListings" element={<JobListings />} />
+        <Route path="/edit-job/:id" element={<EditJobForm />} />
+        <Route path="/EmployerDashboard" element={<EmployerDashboard />} />
+        <Route path="/EmployeeJobListing" element={<EmployeeJobListing />} />
+        <Route path="/JobApplications" element={<JobApplications />} />
+        <Route path="/Profile" element={<Profile />} />
       
 
        

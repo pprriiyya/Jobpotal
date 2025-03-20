@@ -1,15 +1,19 @@
 .contact-us-container {
-    padding: 20px;
-    max-width: 4000px;
-    margin: 0 auto;
+   
+    max-width: 100%;
+   
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    width: 100%;
+    margin: 0 auto;
   }
   
   .contact-us-info {
     text-align: center;
     margin-bottom: 30px;
+    width: 100%;
   }
   
   .contact-us-header {
@@ -18,7 +22,9 @@
   
   .contact-details {
     text-align: left;
-    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+   
   }
   
   .contact-details h3 {
@@ -40,8 +46,15 @@
     text-decoration: underline;
   }
   
-  .contact-us-form .form-group {
+  .contact-us-form ,form-group {
     margin-bottom: 15px;
+    border: 3px   solid black ;
+    border-radius: 5px;
+    padding: 10px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    
   }
   
   .contact-us-form label {
@@ -103,8 +116,8 @@
   }
 
   .contact-us-container {
-    padding: 20px;
-    max-width: 1200px;
+    
+    max-width: 100%;
     margin: 0 auto;
     background-color: pink;
     border-radius: 8px;
@@ -114,6 +127,8 @@
   .logo-cell {
     position: relative;
     width: 200px; /* Set to the width of your image */
+    height: 200px; /* Set to the height of your image */  
+   
   }
   
   .logoo {
@@ -121,9 +136,23 @@
     top: 0;
     right: 0;
     bottom: 0;
-    left: 400px;
-    width: 400px; /* Adjust the image size as needed */
+    left: 600px;
+    width: 440px; /* Adjust the image size as needed */
     height: auto;
     align-items: right;
+  }
+
+  .submit-button{
+    background-color: darkcyan;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 400px;
+
   }
   

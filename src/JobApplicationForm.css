@@ -1,7 +1,7 @@
 /* JobApplicationForm.css */
 .job-application-form {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 50px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -23,6 +23,7 @@
     display: block;
     margin-bottom: 5px;
     color: #333;
+    text-align: left;
   }
   
   .form-group input,
@@ -58,3 +59,7 @@
   .form-group textarea {
     resize: vertical;
   }     
+
+  .label{
+    text-align: left;
+  }

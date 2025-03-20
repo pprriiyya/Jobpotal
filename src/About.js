@@ -37,24 +37,27 @@ const JobPortal = () => {
         </div>
         <nav>
           <ul className="nav-links">
+           
             <a href="Home">Home</a> 
             <a href="About">About Us</a>
             <a href="JobseekerLogin">SignupforJobs </a> 
             <a href="EmployeeLogin">SignupforEmployer</a>
             <a href="ContactUs">ContactUs</a>
+            <a href="JobListings">Job Listings</a>
             <a href="/">Sign In</a>
+
           </ul>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="hero">
-        <h1>"Empowering the leaders of Tomorrow"</h1>
+      <header className="Mission">
+        <p>"Empowering the leaders of Tomorrow"</p>
         <p>{dateTime.toLocaleString()}</p>
 
        
         
-      </section>
+      </header>
 
       {/* About Section */}
       <section className="about">

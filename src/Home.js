@@ -3,6 +3,9 @@ import { db } from "./firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import "./JobPortal.css";
 
+
+
+
 const JobPortal = () => {
   const [dateTime, setDateTime] = useState(new Date());
   const [searchTerm, setSearchTerm] = useState("");
@@ -32,18 +35,21 @@ const JobPortal = () => {
           <h1>Job Portal</h1>
         </div>
         <ul className="nav-links">
+      
           <li><a href="Home">Home</a></li>
           <li><a href="About">About Us</a></li>
           <li><a href="JobSeekerLogin"> Signup for Jobs</a></li>
           <li><a href="EmployeeLogin"> Sign up for Employer</a></li>
           <li><a href="ContactUs">Contact Us</a></li>
+          <li> <a href = "JobListings">Job Listings</a></li>
           <li><a href="/">Sign In</a></li>
+         
         </ul>
       </nav>
 
       {/* Hero Section */}
-      <header className="hero">
-        <h1>"Empowering the leaders of Tomorrow"</h1>
+      <header className="Mission">
+        <p>"Empowering the leaders of Tomorrow"</p>  
         <p>{dateTime.toLocaleString()}</p>
       </header>
 

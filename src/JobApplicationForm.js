@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { collection, addDoc } from 'firebase/firestore';
-import { db } from './firebase'; // Import the Firestore database
-
+import { ref, push } from 'firebase/database'; // Import Realtime Database
+import { realtimeDB } from './firebase'; // Import Realtime Database
 import './JobApplicationForm.css'; // Import the CSS file
 
 function JobApplicationForm() {
@@ -15,6 +14,7 @@ function JobApplicationForm() {
     interviewDate: '',
     coverLetter: '',
     resume: null,
+    jobType: 'Full Time',
   });
 
   const handleChange = (e) => {
@@ -31,10 +31,24 @@ function JobApplicationForm() {
     e.preventDefault();
 
     try {
-      // Save form data to Firestore
-      await addDoc(collection(db, 'jobApplications'), formData);
+      // Enregistrer les données dans Firebase Realtime Database
+      await push(ref(realtimeDB, 'jobApplications'), formData);
       console.log('Form data submitted:', formData);
       alert('Application submitted successfully!');
+      
+      // Réinitialiser le formulaire après soumission
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        position: '',
+        startDate: '',
+        interviewDate: '',
+        coverLetter: '',
+        resume: null,
+        jobType: 'Full Time',
+      });
     } catch (error) {
       console.error('Error submitting form data:', error);
       alert('Failed to submit application. Please try again.');
@@ -47,109 +61,48 @@ function JobApplicationForm() {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="firstName">First Name:</label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            required
-          />
+          <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} required />
         </div>
         <div className="form-group">
           <label htmlFor="lastName">Last Name:</label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            required
-          />
+          <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} required />
         </div>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
         </div>
         <div className="form-group">
           <label htmlFor="phone">Phone:</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
+          <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
         </div>
         <div className="form-group">
           <label htmlFor="position">Applied Position:</label>
-          <input
-            type="text"
-            id="position"
-            name="position"
-            value={formData.position}
-            onChange={handleChange}
-            required
-          />
+          <input type="text" id="position" name="position" value={formData.position} onChange={handleChange} required />
         </div>
         <div className="form-group">
           <label htmlFor="startDate">Earliest Start Date:</label>
-          <input
-            type="date"
-            id="startDate"
-            name="startDate"
-            value={formData.startDate}
-            onChange={handleChange}
-            required
-          />
+          <input type="date" id="startDate" name="startDate" value={formData.startDate} onChange={handleChange} required />
         </div>
         <div className="form-group">
           <label htmlFor="interviewDate">Preferred Interview Date:</label>
-          <input
-            type="date"
-            id="interviewDate"
-            name="interviewDate"
-            value={formData.interviewDate}
-            onChange={handleChange}
-            required
-          />
+          <input type="date" id="interviewDate" name="interviewDate" value={formData.interviewDate} onChange={handleChange} required />
         </div>
         <div className="form-group">
           <label htmlFor="coverLetter">Cover Letter:</label>
-          <textarea
-            id="coverLetter"
-            name="coverLetter"
-            value={formData.coverLetter}
-            onChange={handleChange}
-            required
-          ></textarea>
+          <textarea id="coverLetter" name="coverLetter" value={formData.coverLetter} onChange={handleChange} required></textarea>
         </div>
         <div className="form-group">
           <label htmlFor="resume">Upload Resume:</label>
-          <input
-            type="file"
-            id="resume"
-            name="resume"
-            onChange={handleFileChange}
-            required
-          />
+          <input type="file" id="resume" name="resume" onChange={handleFileChange} required />
         </div>
         <div className="form-group">
           <label htmlFor="jobType">Job Type:</label>
-          <select>
+          <select name="jobType" value={formData.jobType} onChange={handleChange}>
             <option value="Full Time">Full Time</option>
             <option value="Part Time">Part Time</option>
-            <option value="FreeLancer">FreeLancer</option>
+            <option value="Freelancer">Freelancer</option>
           </select>
-          </div>
+        </div>
 
         <button type="submit" className="submit-button">Submit</button>
       </form>
