@@ -46,25 +46,25 @@
     text-decoration: underline;
   }
   
-  .contact-us-form ,form-group {
+  .contact-us-formm ,form-group {
     margin-bottom: 15px;
     border: 3px   solid black ;
     border-radius: 5px;
     padding: 10px;
     width: 70%;
-    margin-left: 15%;
+    margin-left: 25%;
     margin-right: 15%;
     
   }
   
-  .contact-us-form label {
+  .contact-us-formm label {
     display: block;
     margin-bottom: 5px;
     color: #333;
   }
   
-  .contact-us-form input,
-  .contact-us-form textarea {
+  .contact-us-formm input,
+  .contact-us-formm textarea {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -72,12 +72,12 @@
     font-size: 1rem;
   }
   
-  .contact-us-form textarea {
+  .contact-us-formm textarea {
     resize: vertical;
     height: 100px;
   }
   
-  .contact-us-form input[type="file"] {
+  .contact-us-formm input[type="file"] {
     border: none;
     padding: 0;
   }
@@ -145,14 +145,14 @@
   .submit-button{
     background-color: darkcyan;
     text-align: center;
-    width: 100px;
+    width: 120px;
     height: 50px;
     border-radius: 10px;
     border: none;
     color: white;
     font-size: 20px;
     cursor: pointer;
-    margin-left: 400px;
+    margin-left: 200px;
 
   }
   

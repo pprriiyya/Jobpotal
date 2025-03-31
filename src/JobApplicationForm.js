@@ -104,7 +104,7 @@ function JobApplicationForm() {
           </select>
         </div>
 
-        <button type="submit" className="submit-button">Submit</button>
+        <button type="submit" className="submit-buttonn">Submit</button>
       </form>
     </div>
   );

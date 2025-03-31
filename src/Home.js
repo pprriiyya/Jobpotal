@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { db } from "./firebase";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, getDocs, where } from "firebase/firestore";
 import "./JobPortal.css";
-
+import Review from "./Review";
 
 
 
@@ -10,6 +10,7 @@ const JobPortal = () => {
   const [dateTime, setDateTime] = useState(new Date());
   const [searchTerm, setSearchTerm] = useState("");
   const [locations, setLocations] = useState([]);
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -18,11 +19,22 @@ const JobPortal = () => {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const fetchReviews = async () => {
+      const q = query(collection(db, "reviews"));
+      const querySnapshot = await getDocs(q);
+      const fetchedReviews = querySnapshot.docs.map((doc) => doc.data());
+      setReviews(fetchedReviews);
+    };
+
+    fetchReviews();
+  }, []);
+
   const handleSearch = async () => {
     if (!searchTerm) return;
     const q = query(collection(db, "locations"), where("name", "==", searchTerm));
     const querySnapshot = await getDocs(q);
-    const results = querySnapshot.docs.map(doc => doc.data());
+    const results = querySnapshot.docs.map((doc) => doc.data());
     setLocations(results);
   };
 
@@ -35,34 +47,33 @@ const JobPortal = () => {
           <h1>Job Portal</h1>
         </div>
         <ul className="nav-links">
-      
           <li><a href="Home">Home</a></li>
           <li><a href="About">About Us</a></li>
           <li><a href="JobSeekerLogin"> Signup for Jobs</a></li>
           <li><a href="EmployeeLogin"> Sign up for Employer</a></li>
           <li><a href="ContactUs">Contact Us</a></li>
-          <li> <a href = "JobListings">Job Listings</a></li>
+          <li><a href="JobListings">Job Listings</a></li>
+          <li><a href="Review">Reviews</a></li>
           <li><a href="/">Sign In</a></li>
-         
         </ul>
       </nav>
 
       {/* Hero Section */}
       <header className="Mission">
-        <p>"Empowering the leaders of Tomorrow"</p>  
+        <p>"Empowering the leaders of Tomorrow"</p>
         <p>{dateTime.toLocaleString()}</p>
       </header>
 
       {/* Main Content */}
       <main>
-        <section className="section">
+        <section className="sectionn">
           <h2>List Locations</h2>
           <p>Here you can list different locations for your organization or business.</p>
         </section>
 
-        <section className="section search-section">
+        <section className="sectionn search-section">
           <h2>Search Expert</h2>
-          <div className="search-container">
+          <div className="search-containerr">
             <input 
               type="text" 
               placeholder="Search Locations" 
@@ -78,21 +89,23 @@ const JobPortal = () => {
           </ul>
         </section>
 
-        <section className="section submit-section">
+        <section className="sectionn submit-section">
           <h2>Submit Now</h2>
-          <div className="search-container">
+          <div className="search-containerr">
             <input type="text" placeholder="Job Title" />
             <button>Submit Now</button>
           </div>
         </section>
 
-        <section className="section job-type-section">
+        <section className="job-type-section">
           <h2>Job Type</h2>
-          <label><input type="radio" name="job-type" value="freelancer" /> Freelancer</label>
+          <label><input type="radio" name="job-type" value="freelancer" /> Freelancer</label><br />
           <label><input type="radio" name="job-type" value="part-time" /> Part Time</label>
           <label><input type="radio" name="job-type" value="full-time" /> Full Time</label>
         </section>
       </main>
+
+
 
       {/* Footer */}
       <footer className="footer">
@@ -100,9 +113,11 @@ const JobPortal = () => {
           <div className="footer-links">
             <a href="Home">Home</a> <br /> <hr />
             <a href="About">About Us</a><br /> <hr />
-            <a href="JobseekerLogin">SignupforJobs </a> <br /> <hr />
-            <a href="EmployeeLogin">SignupforEmployer</a><br /> <hr />
-            <a href="ContactUs">ContactUs</a><br /><hr />
+            <a href="JobseekerLogin">Signup for Jobs</a> <br /> <hr />
+            <a href="EmployeeLogin">Signup for Employer</a><br /> <hr />
+            <a href="ContactUs">Contact Us</a><br /><hr />
+            <a href="JobListings">Job Listings</a><br /> <hr />
+            
             <a href="/">Sign In</a>
           </div>
 
@@ -133,4 +148,4 @@ const JobPortal = () => {
   );
 };
 
-export default JobPortal; 
+export default JobPortal;

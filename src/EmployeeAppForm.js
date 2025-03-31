@@ -106,16 +106,16 @@ function EmployeeAppForm() {
     <h1 className="form-title">Employment Eligibility Verification Form</h1>
     <form onSubmit={handleSubmit} className="employee-form">
       <div className="form-group">
-        <p className="form-label">First Name</p>
-        <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleChange} required className="form-input" />
+        <p className="form-label">Company Name</p>
+        <input type="text" name="Company Name" placeholder="Company Name" value={formData.CompanyName} onChange={handleChange} required className="form-input" />
       </div>
       <div className="form-group">
-        <p className="form-label">Middle Name</p>
-        <input type="text" name="middleName" placeholder="Middle Name" value={formData.middleName} onChange={handleChange} className="form-input" />
+        <p className="form-label">Company Name</p>
+        <input type="text" name="Company Name" placeholder="Company Name" value={formData.CompanyName} onChange={handleChange} className="form-input" />
       </div>
       <div className="form-group">
-        <p className="form-label">Last Name</p>
-        <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} required className="form-input" />
+        <p className="form-label">Company Name</p>
+        <input type="text" name="Company Name" placeholder="Company Name" value={formData.CompanyName} onChange={handleChange} required className="form-input" />
       </div>
       <div className="form-group">
         <p className="form-label">Email</p>
@@ -227,7 +227,7 @@ function EmployeeAppForm() {
         <input type="text" name="position" placeholder="Position" value={formData.position} onChange={handleChange} required className="form-input" />
       </div>
 
-      <button type="submit" className="submit-button">Submit</button>
+      <button type="submit" className="submit-buttonn">Submit</button>
     </form>
   </div>   
 );

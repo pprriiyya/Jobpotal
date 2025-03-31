@@ -1,0 +1,36 @@
+.job-status {
+  padding: 20px;
+}
+
+.application-cardd {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background-color:skyblue;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 500px;
+ }
+.application-card h3 {
+  margin: 0;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+
+}
+
+.application-card p {
+  margin: 5px 0;
+  color: #555;
+  
+}
+
+h2 {
+  margin-top: 0%;
+  color: #993d0b;
+ 
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 60px;
+
+
+}

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase";
 import { useNavigate } from "react-router-dom";
+import JobSeekerDashboard from "./JobSeekerDashboard"; // Import JobSeekerDashboard
 import "./Login.css";
+import Review from "./Review";
 
 const JobSeekerLogin = () => {
     const [email, setEmail] = useState("");
@@ -17,7 +19,7 @@ const JobSeekerLogin = () => {
             await signInWithEmailAndPassword(auth, email, password);
             setEmail(""); // Clear form after successful login
             setPassword("");
-            navigate("/JobApplicationForm"); // Redirect job seeker to dashboard
+            navigate("/JobSeekerDashboard"); // Redirect job seeker to dashboard
         } catch (error) {
             setError("Invalid email or password. Please try again.");
         }
@@ -39,6 +41,8 @@ const JobSeekerLogin = () => {
             <a href="EmployeeLogin">SignupforEmployer</a>
             <a href="ContactUs">ContactUs</a>
             <a href="JobListings">Job Listings</a>
+            <a href="Review">Reviews</a>
+
             <a href="/">Sign In</a>
 
           </ul>
@@ -92,6 +96,8 @@ const JobSeekerLogin = () => {
             <a href="JobseekerLogin">SignupforJobs </a> <br /> <hr />
             <a href="EmployeeLogin">SignupforEmployer</a><br /> <hr />
             <a href="ContactUs">ContactUs</a><br /><hr />
+            <a href="JobListings">Job Listings</a><br /><hr />
+            <a href="Review">Reviews</a><br /><hr />
             <a href="/">Sign In</a>
           </div>
 

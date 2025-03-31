@@ -39,6 +39,7 @@ const EmployerLogin = () => {
             <a href="EmployeeLogin">SignupforEmployer</a>
             <a href="ContactUs">ContactUs</a>
             <a href="JobListings">Job Listings</a>
+            <a href="Review">Reviews</a>
             <a href="/">Sign In</a>
 
           </ul>
@@ -91,6 +92,8 @@ const EmployerLogin = () => {
             <a href="JobseekerLogin">SignupforJobs </a> <br /> <hr />
             <a href="EmployeeLogin">SignupforEmployer</a><br /> <hr />
             <a href="ContactUs">ContactUs</a><br /><hr />
+            <a href="JobListings">Job Listings</a><br /> <hr />
+            <a href="Review">Reviews</a><br /> <hr />
             <a href="/">Sign In</a>
           </div>
 

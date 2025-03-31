@@ -6,9 +6,11 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 280px; /* Reduced width for a more compact layout */
   text-align: center;
-  margin-top: 150px;
+  margin-top: 80px;
   margin-left: 600px;
   margin-bottom: 50px;
+  width: 400px;
+  height: 500px;
   
 }
 

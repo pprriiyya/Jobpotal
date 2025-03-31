@@ -76,6 +76,7 @@ function JobListings() {
             <a href="EmployeeLogin">SignupforEmployer</a>
             <a href="ContactUs">ContactUs</a>
             <a href="JobListings">Job Listings</a>
+            <a href ="Review">Reviews</a>
             <a href="/">Sign In</a>
 
           </ul>
@@ -114,6 +115,8 @@ function JobListings() {
             <a href="JobseekerLogin">Signup for Jobs </a> <br /> <hr />
             <a href="EmployeeLogin">Signup for Employer</a><br /> <hr />
             <a href="ContactUs">Contact Us</a><br /><hr />
+            <a href="JobListings">Job Listings</a><br /> <hr />
+            <a href="Review">Reviews</a><br /> <hr />
             <a href="/">Sign In</a>
           </div>
 

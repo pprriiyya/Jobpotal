@@ -78,7 +78,7 @@ body {
 
 
 /* Sections */
-.section {
+.sectionn {
     margin: 30px 0;
     padding: 20px;
     background: white;
@@ -86,26 +86,32 @@ body {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.search-container {
+.search-containerr {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
+   
 }
 
 .search-container input {
     padding: 10px;
     border: 1px solid darkcyan;
     border-radius: 5px;
+    width: 100px;
 }
 
-.search-container button {
+.search-containerr button {
     background-color: darkcyan;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 200px;
 }
 
 .search-container button:hover {
@@ -161,3 +167,17 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }   
+
+ .job-type-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 97.3%;
+    height: 100px;
+}

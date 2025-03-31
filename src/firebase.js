@@ -11,13 +11,13 @@ const firebaseConfig = {
   messagingSenderId: "919089572466",
   appId: "1:919089572466:web:8d6515f79ddb87d4bf70eb",
   measurementId: "G-FC9R3P42RW",
-  databaseURL: "https://priya-d271b-default-rtdb.firebaseio.com/", // Ajoute cette ligne
+  databaseURL: "https://priya-d271b-default-rtdb.firebaseio.com/", // Realtime Database URL
 };
 
-// Initialiser Firebase UNE SEULE FOIS
+// Initialize Firebase once
 const app = initializeApp(firebaseConfig);
 
-// Exporter les services Firebase
-export const auth = getAuth(app);
-export const db = getFirestore(app);
-export const realtimeDB = getDatabase(app); // Export Realtime Database
+// Export Firebase services
+export const auth = getAuth(app); // Authentication
+export const db = getFirestore(app); // Firestore database
+export const realtimeDB = getDatabase(app); // Realtime Database

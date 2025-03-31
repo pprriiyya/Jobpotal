@@ -52,6 +52,7 @@ const ContactUs = () => {
             <a href="EmployeeLogin">SignupforEmployer</a>
             <a href="ContactUs">ContactUs</a>
             <a href="JobListings">Job Listings</a>
+            <a href="Review">Reviews</a>
             <a href="/">Sign In</a>
 
           </ul>
@@ -86,7 +87,7 @@ const ContactUs = () => {
         </div>
       </div>
       
-      <form className="contact-us-form" onSubmit={handleSubmit}>
+      <form className="contact-us-formm" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input
@@ -168,6 +169,8 @@ const ContactUs = () => {
             <a href="JobseekerLogin">SignupforJobs </a> <br /> <hr />
             <a href="EmployeeLogin">SignupforEmployer</a><br /> <hr />
             <a href="ContactUs">ContactUs</a><br /><hr />
+            <a href ="JobListings">JobListing</a><br /><hr />
+            <a href="Review">Reviews</a><br /><hr />
             <a href="/">Sign In</a>
           </div>
 

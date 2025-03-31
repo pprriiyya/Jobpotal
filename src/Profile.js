@@ -1,87 +1,75 @@
-import React, { useState } from 'react';
-import { ref, update } from 'firebase/database';
+import React, { useState, useEffect } from 'react';
+import { ref, update, get } from 'firebase/database';
 import { realtimeDB } from './firebase'; // Firebase setup
 import './Profile.css';
 
-
 function Profile({ userProfile, userId }) {
   const [isEditing, setIsEditing] = useState(false);
-  const [newProfileData, setNewProfileData] = useState(userProfile);
+  const [formData, setFormData] = useState({
+    name: userProfile?.name || '',
+    email: userProfile?.email || '',
+    companyName: userProfile?.companyName || '',
+    contactNumber: userProfile?.contactNumber || '',
+  });
 
-  const handleEdit = () => {
-    setIsEditing(true);
+  // Fetch updated user profile data dynamically
+  useEffect(() => {
+    if (userId) {
+      const userProfileRef = ref(realtimeDB, `userProfiles/${userId}`);
+      get(userProfileRef).then((snapshot) => {
+        if (snapshot.exists()) {
+          setFormData(snapshot.val());
+        }
+      });
+    }
+  }, [userId]);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const handleSave = () => {
     if (userId) {
-      const userRef = ref(realtimeDB, `userProfiles/${userId}`);
-      update(userRef, newProfileData)
+      const userProfileRef = ref(realtimeDB, `userProfiles/${userId}`);
+      update(userProfileRef, formData)
         .then(() => {
+          console.log('Profile updated successfully');
           setIsEditing(false);
-          alert('Profile updated successfully!');
         })
         .catch((error) => {
           console.error('Error updating profile:', error);
-          alert('Failed to update profile');
         });
     }
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setNewProfileData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
   return (
     <div className="profile-container">
-      <h2>Your Profile</h2>
-
-      {isEditing ? (
-        <div className="edit-profile-form">
-          <input
-            type="text"
-            name="firstName"
-            value={newProfileData.firstName}
-            onChange={handleChange}
-            placeholder="First Name"
-          />
-          <input
-            type="text"
-            name="lastName"
-            value={newProfileData.lastName}
-            onChange={handleChange}
-            placeholder="Last Name"
-          />
-          <input
-            type="email"
-            name="email"
-            value={newProfileData.email}
-            onChange={handleChange}
-            placeholder="Email"
-          />
-          <input
-            type="text"
-            name="phoneNumber"
-            value={newProfileData.phoneNumber}
-            onChange={handleChange}
-            placeholder="Phone Number"
-          />
-          <button onClick={handleSave} className="save-button">
-            Save Changes
-          </button>
+      <h2>Employer Profile</h2>
+      {!isEditing ? (
+        <div className="profile-details">
+          <p><strong>Name:</strong> {formData.name}</p>
+          <p><strong>Email:</strong> {formData.email}</p>
+          <p><strong>Company Name:</strong> {formData.companyName}</p>
+          <p><strong>Contact Number:</strong> {formData.contactNumber}</p>
+          <button onClick={() => setIsEditing(true)} className="edit-button">Edit Profile</button>
         </div>
       ) : (
-        <div className="profile-details">
-          <p><strong>First Name:</strong> {userProfile.firstName}</p>
-          <p><strong>Last Name:</strong> {userProfile.lastName}</p>
-          <p><strong>Email:</strong> {userProfile.email}</p>
-          <p><strong>Phone Number:</strong> {userProfile.phoneNumber}</p>
-          <button onClick={handleEdit} className="edit-button">
-            Edit Profile
-          </button>
+        <div className="edit-profile-form">
+          <label>Name</label>
+          <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
+          
+          <label>Email</label>
+          <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
+          
+          <label>Company Name</label>
+          <input type="text" name="companyName" value={formData.companyName} onChange={handleInputChange} />
+          
+          <label>Contact Number</label>
+          <input type="text" name="contactNumber" value={formData.contactNumber} onChange={handleInputChange} />
+          
+          <button onClick={handleSave} className="save-button">Save</button>
+          <button onClick={() => setIsEditing(false)} className="cancel-button">Cancel</button>
         </div>
       )}
     </div>

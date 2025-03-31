@@ -1,0 +1,78 @@
+/* Container for the edit application page */
+.edit-application {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Title styling */
+.edit-application h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form container */
+form{
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and textarea fields styling */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 15px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    color: #555;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Labels styling */
+label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Submit button styling */
+button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Loading and error messages */
+.edit-application p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+}
+
+.edit-application form p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e53935;
+}

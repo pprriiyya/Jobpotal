@@ -21,6 +21,14 @@ import EmployerDashboard from "./EmployerDashboard";
 import EmployeeJobListing from "./EmployeeJobListing";
 import JobApplications from "./JobApplications";
 import Profile from "./Profile";
+import JobSeekerDashboard from "./JobSeekerDashboard";
+import JobSeekerProfile from "./JobSeekerProfile";
+import EditJobApplicationForm from "./EditJobApplicationForm";
+import EditJobApplication from "./EditJobApplication";
+import JobStatus from "./JobStatus";
+import Review from "./Review";
+
+
 
 import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -51,6 +59,15 @@ const App = () => {
         <Route path="/EmployeeJobListing" element={<EmployeeJobListing />} />
         <Route path="/JobApplications" element={<JobApplications />} />
         <Route path="/Profile" element={<Profile />} />
+        <Route path="/JobSeekerDashboard" element={<JobSeekerDashboard />} />
+        <Route path="/JobSeekerProfile" element={<JobSeekerProfile />} />
+        <Route path="/edit-job/:id" element={<EditJobForm />} />
+        <Route path="/edit-job-application/:id" element={<EditJobApplicationForm />} />
+        <Route path="/edit-job-application/:id" element={<EditJobApplication />} />
+        <Route path="/JobStatus" element={<JobStatus />} />
+        <Route path="/Review" element={<Review />} />
+     
+
       
 
        
