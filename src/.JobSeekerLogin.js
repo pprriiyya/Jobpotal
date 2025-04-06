@@ -43,7 +43,7 @@ const JobSeekerLogin = () => {
             <a href="JobListings">Job Listings</a>
             <a href="Review">Reviews</a>
 
-            <a href="/">Sign In</a>
+            <a href="/">Admin</a>
 
           </ul>
         </nav>
@@ -98,7 +98,7 @@ const JobSeekerLogin = () => {
             <a href="ContactUs">ContactUs</a><br /><hr />
             <a href="JobListings">Job Listings</a><br /><hr />
             <a href="Review">Reviews</a><br /><hr />
-            <a href="/">Sign In</a>
+            <a href="/">Admin</a>
           </div>
 
           <div className="footer-quote">

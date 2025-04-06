@@ -148,6 +148,7 @@ body {
     max-width: 400px;
     font-style: italic;
     text-align: center;
+    
 }
 
 .social-links img {
@@ -180,4 +181,30 @@ body {
     gap: 10px;
     width: 97.3%;
     height: 100px;
+}
+
+
+.job-type-sectio {
+    margin: 30px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 97.3%;
+    height: 100px;
+    button{
+        background-color: darkcyan;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 200px;
+        align-items: right;
+    }
+   
 }

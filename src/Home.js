@@ -54,7 +54,7 @@ const JobPortal = () => {
           <li><a href="ContactUs">Contact Us</a></li>
           <li><a href="JobListings">Job Listings</a></li>
           <li><a href="Review">Reviews</a></li>
-          <li><a href="/">Sign In</a></li>
+          <li><a href="/">Admin</a></li>
         </ul>
       </nav>
 
@@ -66,6 +66,13 @@ const JobPortal = () => {
 
       {/* Main Content */}
       <main>
+            
+      <section className="job-type-sectio">
+          <h2>Apply As</h2> &nbsp; &nbsp; &nbsp;
+          <button ><input type="button" name="JobSeeker" value="JobSeeker" onClick={() => window.location.href = "/JobApplicationForm"} /> Apply As JobSeeker</button><br />
+          <button><input type="button" name="Employer" value="Employer" onClick={() => window.location.href = "/EmployeeAppForm"} /> Apply As Employer</button>
+          
+        </section>
         <section className="sectionn">
           <h2>List Locations</h2>
           <p>Here you can list different locations for your organization or business.</p>
@@ -103,6 +110,8 @@ const JobPortal = () => {
           <label><input type="radio" name="job-type" value="part-time" /> Part Time</label>
           <label><input type="radio" name="job-type" value="full-time" /> Full Time</label>
         </section>
+
+    
       </main>
 
 
@@ -118,7 +127,7 @@ const JobPortal = () => {
             <a href="ContactUs">Contact Us</a><br /><hr />
             <a href="JobListings">Job Listings</a><br /> <hr />
             
-            <a href="/">Sign In</a>
+            <a href="/">Admin</a>
           </div>
 
           <div className="footer-quote">

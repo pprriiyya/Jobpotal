@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import Home from "./Home";
 import Login from "./Login";
 import Signup from "./Signup";
-import Home from "./Home";
+
 import About from "./About";
 import ForgotPassword from "./ForgotPassword"; // Removed stray `zz`
 import JobSeekerLogin from "./.JobSeekerLogin";
@@ -27,6 +27,12 @@ import EditJobApplicationForm from "./EditJobApplicationForm";
 import EditJobApplication from "./EditJobApplication";
 import JobStatus from "./JobStatus";
 import Review from "./Review";
+import AdminDashboard from "./AdminDashboard";
+import DeleteJobSeeker from "./DeleteJobSeeker";
+
+
+
+
 
 
 
@@ -39,9 +45,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
+      <Route path="/home" element={<Home />} />
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/home" element={<Home />} />
+        
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
         <Route path="/about" element={<About />} />
         <Route path="/JobSeekerLogin" element={<JobSeekerLogin />} />
@@ -66,6 +73,12 @@ const App = () => {
         <Route path="/edit-job-application/:id" element={<EditJobApplication />} />
         <Route path="/JobStatus" element={<JobStatus />} />
         <Route path="/Review" element={<Review />} />
+        <Route path="/AdminDashboard" element={<AdminDashboard />} />
+        <Route path="/DeleteJobSeeker" element={<DeleteJobSeeker />} />
+      
+      
+       
+       
      
 
       

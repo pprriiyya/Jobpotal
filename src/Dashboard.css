@@ -66,3 +66,9 @@
 }
 
 /* Add more styles as needed */ 
+
+.dashboard-welcome {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: red;
+}

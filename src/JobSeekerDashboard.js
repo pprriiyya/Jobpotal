@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import { useNavigate } from 'react-router-dom';
 import JobSeekerProfile from './JobSeekerProfile';
 import JobApplicationForm from './JobApplicationForm';
-
 import EditJobApplicationForm from './EditJobApplicationForm';
 import JobStatus from './JobStatus';
 
@@ -12,13 +11,15 @@ import { realtimeDB } from './firebase';
 import './Dashboard.css';
 
 function JobSeekerDashboard() {
-  const [activeSection, setActiveSection] = useState('JobListings'); // Default section updated to Job Listings
+  const [activeSection, setActiveSection] = useState('JobListings'); // Default to JobListings or first section
   const [userProfile, setUserProfile] = useState(null);
   const [userId, setUserId] = useState(null);
+  const [loading, setLoading] = useState(true); // Loading state to handle data fetching
   const navigate = useNavigate(); // Initialize navigate function
 
   const auth = getAuth();
 
+  // Fetch user profile when logged in
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -28,10 +29,12 @@ function JobSeekerDashboard() {
           if (snapshot.exists()) {
             setUserProfile(snapshot.val());
           }
+          setLoading(false); // Set loading to false after data is fetched
         });
       } else {
         setUserId(null);
         setUserProfile(null);
+        setLoading(false); // Handle case when no user is logged in
         navigate('/JobSeekerLogin'); // Redirect to login page if not logged in
       }
     });
@@ -53,9 +56,15 @@ function JobSeekerDashboard() {
     }
   };
 
+  // Loading state: Show loading message while data is being fetched
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="dashboard-container">
       <div className="sidebar">
+        {/* Sidebar buttons */}
         <button onClick={() => handleButtonClick('EditJobApplicationForm')} className="sidebar-button">
           Edit Application
         </button>
@@ -76,7 +85,8 @@ function JobSeekerDashboard() {
       <div className="main-content">
         <h1 className="dashboard-title">Job Seeker Dashboard</h1>
 
-        {/* Display the active section based on button click */}
+        {/* Render sections dynamically based on active section */}
+        {activeSection === 'JobListings' && <div> {/* You can create Job Listings here */} </div>}
         {activeSection === 'JobSeekerProfile' && <JobSeekerProfile profile={userProfile} userId={userId} />}
         {activeSection === 'JobApplicationForm' && <JobApplicationForm />}
         {activeSection === 'EditJobApplicationForm' && <EditJobApplicationForm />}
